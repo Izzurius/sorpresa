@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Anita ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+margin:0;
+overflow-x:hidden;
+
+background:
+radial-gradient(circle at 50% 50%, rgba(255,215,0,.15), transparent 35%),
+radial-gradient(circle at 20% 80%, rgba(102,204,255,.12), transparent 40%),
+radial-gradient(circle at 80% 20%, rgba(255,102,204,.10), transparent 40%),
+#000;
+
+color:white;
+}
+
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:40px;
+position:relative;
+}
+
+h1{
+font-size:4rem;
+color:#FFD700;
+text-shadow:0 0 20px gold;
+}
+
+h2{
+font-size:2rem;
+margin-bottom:20px;
+color:#FFD700;
+}
+
+p{
+max-width:800px;
+line-height:1.8;
+font-size:1.2rem;
+}
+
+.galaxy{
+background:
+position:relative;
+radial-gradient(circle at center,
+rgba(255,215,0,.3),
+transparent 50%),
+#000;
+overflow:hidden;
+position:relative;
+height;100vh;
+z-index:2;
+}
+
+.girasolCentral{
+
+animation:
+latido 2s infinite;
+
+}
+
+@keyframes latido{
+
+50%{
+transform:scale(1.15);
+}
+
+}
+
+.botonCarta{
+margin-top:20px;
+margin-bottom:50px;
+padding:10px 20px;
+border-radius:12px;
+border:none;
+background:gold;
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+
+.carta{
+opacity:0;
+max-height:0;
+overflow:hidden;
+transform:translateY(40px);
+
+transition:
+1.5s;
+}
+
+.carta.visible{
+opacity:1;
+max-height:3000px;
+transform:translateY(0);
+}
+
+.glow{
+animation:pulse 3s infinite, flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-12px);
+}
+}
+
+.nebulosa{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(
+circle at 30% 40%,
+rgba(255,215,0,.18),
+transparent 35%
+),
+
+radial-gradient(
+circle at 70% 60%,
+rgba(255,120,180,.12),
+transparent 40%
+),
+
+radial-gradient(
+circle at 50% 50%,
+rgba(255,255,255,.06),
+transparent 30%
+);
+
+filter:blur(40px);
+
+animation:
+moverNebulosa 18s ease-in-out infinite;
+
+z-index:0;
+
+}
+
+@keyframes moverNebulosa{
+
+0%{
+
+transform:
+scale(1)
+translate(0px,0px);
+
+}
+
+50%{
+
+transform:
+scale(1.15)
+translate(30px,-20px);
+
+}
+
+100%{
+
+transform:
+scale(1)
+translate(0px,0px);
+
+}
+
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+max-width:900px;
+}
+
+.flower{
+font-size:3rem;
+margin:10px;
+animation:spin 12s linear infinite;
+display:inline-block;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+#contador{
+font-size:2rem;
+margin-top:20px;
+color:#FFD700;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+width:100%;
+max-width:1000px;
+margin-top:120px;
+position:relative;
+z-index:100;
+
+}
+
+.fotoFlotante{
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:2px solid gold;
+
+box-shadow:0 0 25px gold;
+
+animation:flotarFoto 6s ease-in-out infinite;
+
+transition:.5s;
+
+z-index:20;
+
+pointer-events:none;
+
+}
+
+.fotoFlotante:hover{
+
+transform:scale(1.1);
+
+box-shadow:0 0 40px gold;
+
+}
+
+@keyframes flotarFoto{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+.imgGaleria{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+transition:0.4s;
+cursor:pointer;
+}
+
+.imgGaleria:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px gold;
+}
+
+.foto{
+background:rgba(255,215,0,.1);
+border:1px solid gold;
+border-radius:15px;
+padding:20px;
+font-size:1.2rem;
+}
+
+.nucleo{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+font-size:120px;
+
+z-index:99;
+
+pointer-events:auto;
+
+cursor:pointer;
+
+filter:
+drop-shadow(0 0 20px gold)
+drop-shadow(0 0 40px gold)
+drop-shadow(0 0 80px gold);
+
+animation:
+latidoNucleo 3s infinite;
+
+}
+
+@keyframes latidoNucleo{
+
+50%{
+
+transform:
+translate(-50%,-50%)
+scale(1.15);
+
+}
+
+}
+
+.anilloEnergia{
+position:absolute;
+top:50%;
+left:50%;
+width:50px;
+height:50px;
+border:2px solid rgba(255,215,0,.8);
+border-radius:50%;
+transform:translate(-50%,-50%);
+animation:expandir 4s infinite;
+pointer-events:none;
+}
+
+.anilloEnergia:nth-child(2){
+animation-delay:1.3s;
+}
+
+.anilloEnergia:nth-child(3){
+animation-delay:2.6s;
+}
+
+@keyframes expandir{
+
+0%{
+width:50px;
+height:50px;
+opacity:1;
+}
+
+100%{
+width:500px;
+height:500px;
+opacity:0;
+}
+
+}
+
+.orbita{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+pointer-events:none;
+z-index:1;
+}
+
+.girasolOrbita{
+position:absolute;
+font-size:16px;
+filter:drop-shadow(0 0 10px gold);
+}
+
+.particula{
+position:absolute;
+width:4px;
+height:4px;
+background:gold;
+border-radius:50%;
+box-shadow:0 0 10px gold;
+}
+
+.tituloContainer{
+position:relative;
+z-index:10;
+}
+
+.galeriaFotos{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+width:100%;
+max-width:1200px;
+margin-top:30px;
+}
+
+.imgGaleria{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+border:2px solid gold;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 0 15px rgba(255,215,0,.4);
+}
+
+.imgGaleria:hover{
+transform:scale(1.05);
+box-shadow:0 0 35px gold;
+}
+
+@media (max-width:768px){
+
+.galeria,
+.galeriaFotos{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    max-width:100% !important;
+    gap:20px;
+    padding:0 12px;
+    margin-left:auto;
+    margin-right:auto;
+    box-sizing:border-box;
+}
+
+.foto{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box;
+}
+
+.imgGaleria{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    display:block;
+    object-fit:cover;
+}
+
+section{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+}
+
+</style>
+</head>
+<body>
+
+<div class="nebulosa"></div>
+
+<section class="galaxy">
+
+<div class="orbita" id="orbita"></div>
+
+<div class="nucleo">
+🌻
+
+<div class="anilloEnergia"></div>
+<div class="anilloEnergia"></div>
+<div class="anilloEnergia"></div>
+
+</div>
+
+<div class="tituloContainer">
+
+<div class="flower">🌻</div>
+
+<h1 class="glow">Para Mi Niña</h1>
+
+<h2>Ana ❤️</h2>
+
+<p>
+En este día especial quiero recordarte
+lo especial que eres para mí.
+</p>
+
+<div id="contador"></div>
+
+<div class="flower">🌻</div>
+
+</div>
+
+</section>
+
+<img src="gatita6.jpg"
+class="fotoFlotante"
+style="top:900px;left:10%;">
+
+<img src="gatita11.jpg"
+class="fotoFlotante"
+style="top:1200px;right:10%;">
+
+<img src="gatita7.jpg"
+class="fotoFlotante"
+style="top:1400px;left:10%;">
+
+<img src="gatita2.jpg"
+class="fotoFlotante"
+style="top:3900px;right:10%;">
+
+<img src="gatita12.jpg"
+class="fotoFlotante"
+style="top:4100px;left:10%;">
+
+<img src="belisima.jpg"
+class="fotoFlotante"
+style="top:4300px;right:10%;">
+
+<section>
+
+<section>
+
+<button onclick="mostrarCarta('carta')">
+💌 Abrir Carta
+</button>
+
+<div id="carta" class="carta">
+
+<h2>💌 Carta Para Anita</h2>
+
+<p>
+
+Eres la luz de los dias.
+
+La risa en mis días grises.
+
+La razón por la que todo tiene más sentido.
+
+Contigo aprendí que el amor
+también vive en los detalles,
+en las conversaciones sencillas,
+en las sonrisas inesperadas
+y en la forma en que haces
+que todo se sienta mejor.
+
+Gracias por existir Anita.
+
+❤️
+
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Flores y cosas que te gustan</h2>
+
+<div class="galeria">
+
+<div class="foto">
+<img src="imagenAMA4.jpg" class="imgGaleria">
+
+<h3>🌻 Flores Amarillas</h3>
+
+<p>
+Representan la alegría que llevas a la vida de quienes te rodean.
+</p>
+
+</div>
+
+<div class="foto">
+
+<img src="imagen3.jpg" class="imgGaleria">
+
+<h3>🤍 Lirios Blancos</h3>
+
+<p>
+Los lirios blancos representan la elegancia, la tranquilidad y la belleza que transmites sin esfuerzo.
+
+Me recuerdan a tu forma de ser: serena, auténtica y capaz de iluminar cualquier lugar con tu presencia.
+
+Así como un lirio destaca por su pureza entre muchas flores, tú destacas por ser única entre todas las personas que he conocido.
+</p>
+
+</div>
+
+<div class="foto">
+
+<img src="imagen2.jpg" class="imgGaleria">
+
+<h3>🏎️ Lewis Hamilton</h3>
+
+<p>
+Lewis Hamilton siempre me ha inspirado por su determinación, disciplina y capacidad de seguir adelante incluso en los momentos difíciles.
+
+De la misma manera, quiero seguir construyendo recuerdos contigo, aprendiendo cada día y disfrutando cada etapa de este camino juntos.
+
+Porque las mejores historias no se escriben en una sola vuelta, sino en cada momento compartido.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<button onclick="mostrarCarta('poema')">
+💌 Abrir poema
+</button>
+
+<div id="poema" class="carta">
+
+<h2>📖 Poema Para Mi Niña</h2>
+
+<p>
+No sé cuántas estrellas
+caben en el cielo.
+
+Ni cuántos girasoles
+pueden seguir al sol.
+
+Pero sí sé que desde que llegaste,
+mis días tienen más color
+y mis sueños más dirección.
+
+Si las flores amarillas
+representan alegría,
+
+entonces tú eres
+un jardín entero.
+
+Si Hamilton representa velocidad,
+
+tú eres la razón
+por la que vale la pena
+cada vuelta del viaje.
+
+Gracias por cada momento.
+
+Gracias por ser tú.
+
+🌻❤️
+
+</p>
+
+</div>
+
+<div style="height:120px;"></div>
+
+<h2>📸 fotitos </h2>
+
+<div class="galeriaFotos">
+
+<img src="imagen5.jpg" class="imgGaleria">
+<img src="HAMimagen5.jpg" class="imgGaleria">
+<img src="kaiser2.jpg" class="imgGaleria">
+
+<img src="gatita.jpg" class="imgGaleria">
+<img src="itadori.jpg" class="imgGaleria">
+<img src="annn12.jpg" class="imgGaleria">
+
+<img src="imagen1.jpg" class="imgGaleria">
+<img src="anitaa.jpg" class="imgGaleria">
+<img src="itadorii.jpg" class="imgGaleria">
+
+<img src="kaiser1.jpg" class="imgGaleria">
+<img src="imagen4.jpg" class="imgGaleria">
+
+</div>
+
+</section>
+
+<section>
+
+<button onclick="abrirCartaFinal()">
+💌 Abrir Carta Final
+</button>
+
+<div id="cartaFinal" class="carta">
+
+<h2>💌 Carta Final </h2>
+
+<p>
+
+Anita,
+
+si algún día dudas de lo mucho
+que significas para mí,
+recuerda todo lo bonito
+que hemos vivido
+y todo lo que aún nos queda por vivir.
+
+Eres mi persona favorita.
+
+Mi lugar seguro.
+
+Mi mayor inspiración.
+
+Gracias por existir.
+
+Te quiero hoy,
+mañana
+y siempre.
+
+❤️
+
+</p>
+
+</div>
+
+</section>
+
+<script>
+
+const inicio = new Date("2026-08-10");
+
+function actualizar(){
+
+const hoy = new Date();
+
+const diferencia =
+hoy - inicio;
+
+const dias =
+Math.floor(
+diferencia /
+(1000*60*60*24)
+);
+
+document.getElementById("contador")
+.innerHTML =
+"🌻 " + dias + " días juntos 🌻";
+
+}
+
+actualizar();
+
+const orbita = document.getElementById("orbita");
+
+const centroX = window.innerWidth / 2;
+const centroY = window.innerHeigth / 2;
+
+
+for(let i=0;i<140;i++){
+
+let flor = document.createElement("div");
+
+flor.className = "girasolOrbita";
+flor.innerHTML = "🌻";
+
+orbita.appendChild(flor);
+
+let brazos = 4;
+
+let brazo =
+(i % brazos) *
+((Math.PI*2)/brazos);
+
+let radio =
+20 + Math.random()*420;
+
+let angulo =
+brazo +
+radio*0.06 +
+(Math.random()-0.5)*0.4;
+
+let velocidad = 0.001 + Math.random()*0.002;
+
+function animar(){
+
+angulo += velocidad;
+
+let espiral = radio * 0.04;
+
+let x = centroX + Math.cos(angulo) *
+radio *
+(1 + espiral);
+
+let y = centroY + Math.sin(angulo) *
+radio *
+0.6 *
+(1 + espiral);
+
+flor.style.left = x + "px";
+flor.style.top = y + "px";
+
+requestAnimationFrame(animar);
+}
+
+animar();
+}
+
+for(let i=0;i<500;i++){
+
+let p = document.createElement("div");
+
+p.className = "particula";
+
+orbita.appendChild(p);
+
+let angulo = Math.random()*Math.PI*2;
+let radio = 50 + Math.random()*400;
+
+p.style.left =
+Math.cos(angulo)*radio + "px";
+
+p.style.top =
+Math.sin(angulo)*radio + "px";
+
+}
+
+setInterval(()=>{
+
+let estrella=document.createElement("div");
+
+estrella.innerHTML="✨";
+
+estrella.style.position="fixed";
+estrella.style.left=Math.random()*window.innerWidth+"px";
+estrella.style.top=Math.random()*window.innerHeight+"px";
+
+estrella.style.pointerEvents="none";
+
+estrella.style.zIndex="9999";
+
+document.body.appendChild(estrella);
+
+setTimeout(()=>{
+estrella.remove();
+},2000);
+
+},300);
+
+document.addEventListener("click",(e)=>{
+
+let h=document.createElement("div");
+
+h.innerHTML="💛";
+
+h.style.position="fixed";
+h.style.left=e.clientX+"px";
+h.style.top=e.clientY+"px";
+
+h.style.fontSize="24px";
+
+h.style.zIndex="9999";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},1500);
+
+});
+
+function mostrarCarta(id){
+
+const carta =
+document.getElementById(id);
+
+if(carta){
+
+carta.classList.add("visible");
+
+}
+
+}
+
+function abrirPoema(){
+
+document
+.getElementById("cartaPoema")
+.classList
+.add("visible");
+
+}
+
+function abrirCartaFinal(){
+
+document
+.getElementById("cartaFinal")
+.classList
+.add("visible");
+
+}
+
+let clicksSecretos = 0;
+
+document
+.querySelector(".nucleo")
+.addEventListener("click",()=>{
+
+clicksSecretos++;
+
+if(clicksSecretos >= 7){
+
+document
+.getElementById("sorpresa")
+.style.display="block";
+
+}
+
+});
+
+setInterval(()=>{
+
+let chispa=document.createElement("div");
+
+chispa.innerHTML="✨";
+
+chispa.style.position="absolute";
+
+chispa.style.left=
+(window.innerWidth/2+
+(Math.random()*200-100))+"px";
+
+chispa.style.top=
+(window.innerHeight/2+
+(Math.random()*200-100))+"px";
+
+chispa.style.fontSize=
+(10+Math.random()*20)+"px";
+
+chispa.style.pointerEvents="none";
+
+chispa.style.zIndex="999";
+
+document.body.appendChild(chispa);
+
+let vida=0;
+
+let animar=setInterval(()=>{
+
+vida++;
+
+chispa.style.opacity=1-vida/40;
+
+chispa.style.transform=
+`translateY(${-vida*2}px)`;
+
+if(vida>=40){
+
+clearInterval(animar);
+
+chispa.remove();
+
+}
+
+},30);
+
+},200);
+
+</script>
+
+<div id="sorpresa"
+style="
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:black;
+border:2px solid gold;
+padding:30px;
+border-radius:20px;
+z-index:99999;
+text-align:center;
+">
+
+<h2>💛 Sorpresa Desbloqueada 💛</h2>
+
+<p>
+este es un intento de detalle para ti,espero te guste.
+
+Te amo mucho Anita,mi niña ❤️
+</p>
+
+<button onclick="
+document.getElementById('sorpresa').style.display='none'
+">
+Cerrar
+</button>
+
+</div>
+
+</body>
+</html>
