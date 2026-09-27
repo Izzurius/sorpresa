@@ -56,6 +56,27 @@ line-height:1.8;
 font-size:1.2rem;
 }
 
+.corazonMagico{
+    position:fixed;
+    font-size:30px;
+    pointer-events:none;
+    z-index:9999;
+
+    animation:subirCorazon 1.5s forwards;
+}
+
+@keyframes subirCorazon{
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-100px) scale(1.8);
+    }
+}
+
 .galaxy{
 background:
 position:relative;
@@ -233,6 +254,48 @@ z-index:100;
 
 }
 
+.finalGalaxia{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.finalContenido{
+    max-width:700px;
+    padding:35px;
+    border:2px solid gold;
+    border-radius:25px;
+
+    background:rgba(255,215,0,0.08);
+
+    box-shadow:
+    0 0 20px gold,
+    0 0 40px rgba(255,215,0,0.4);
+
+    backdrop-filter:blur(8px);
+}
+
+.finalContenido h2{
+    color:gold;
+    margin-bottom:20px;
+    text-shadow:0 0 15px gold;
+}
+
+.finalContenido p{
+    font-size:1.1rem;
+    line-height:1.8;
+    margin:15px 0;
+}
+
+.finalContenido h3{
+    margin-top:25px;
+    color:gold;
+    text-shadow:0 0 10px gold;
+}
+
 .fotoFlotante{
 
 position:absolute;
@@ -338,6 +401,66 @@ translate(-50%,-50%)
 scale(1.15);
 
 }
+
+}
+
+.estrellaFugaz{
+
+    position:fixed;
+
+    width:6px;
+    height:7px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 15px white,
+    0 0 30px white,
+    0 0 50px gold;
+
+    z-index:999;
+
+    animation:fugaz 3s linear forwards;
+
+}
+
+.estrellaFugaz::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0px;
+    right:0;
+
+    width:180px;
+    height:4px;
+
+    background:linear-gradient(
+        to left,
+        white,
+        rgba(255,255,255,0)
+    );
+
+    transform:rotate(135deg);
+
+    transform-origin:right center;
+
+}
+
+@keyframes fugaz{
+
+    from{
+        transform:translate(0,0);
+        opacity:1;
+    }
+
+    to{
+        transform:translate(-600px,600px);
+        opacity:0;
+    }
 
 }
 
@@ -519,6 +642,19 @@ button{
 section{
     margin-top:50px !important;
     margin-bottom:50px !important;
+}
+
+.finalContenido{
+    width:90%;
+    padding:25px;
+}
+
+.finalContenido h2{
+    font-size:1.8rem;
+}
+
+.finalContenido p{
+    font-size:1rem;
 }
 
 }
@@ -1025,6 +1161,52 @@ chispa.remove();
 
 },200);
 
+document.querySelectorAll("img").forEach(img => {
+
+    img.addEventListener("click", function(e){
+
+        let corazon = document.createElement("div");
+
+        corazon.className = "corazonMagico";
+        corazon.innerHTML = "💛";
+
+        corazon.style.left = e.clientX + "px";
+        corazon.style.top = e.clientY + "px";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+            corazon.remove();
+        },1500);
+
+    });
+
+});
+
+setInterval(()=>{
+
+    let estrella =
+    document.createElement("div");
+
+    estrella.className =
+    "estrellaFugaz";
+
+    estrella.style.top =
+    Math.random()*window.innerHeight+"px";
+
+    estrella.style.left =
+    window.innerWidth+"px";
+
+    document.body.appendChild(estrella);
+
+    setTimeout(()=>{
+
+        estrella.remove();
+
+    },2000);
+
+},5000);
+
 </script>
 
 <div id="sorpresa"
@@ -1057,6 +1239,33 @@ Cerrar
 </button>
 
 </div>
+
+<section class="finalGalaxia">
+
+    <div class="finalContenido">
+
+        <h2>🌌 Y bueno si has llegado hasta aqui es por que te lo envie jjsjsj💜</h2>
+
+        <p>
+            Cada estrella, cada foto y cada detalle de esta página
+            fue colocado pensando en ti.
+        </p>
+
+        <p>
+            Gracias por cada sonrisa, cada abrazo y cada momento
+            que hemos compartido.
+        </p>
+
+        <p>
+            Espero que este intento de pequeña galaxia te recuerde lo especial
+            que eres para mí.espero en un futuro poder hacer algo mejor
+        </p>
+
+        <h3>🌻 Te quiero mucho, Anita💜</h3>
+
+    </div>
+
+</section>
 
 </body>
 </html>
