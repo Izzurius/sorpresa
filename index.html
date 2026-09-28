@@ -77,6 +77,29 @@ font-size:1.2rem;
     }
 }
 
+.estrella{
+
+    animation:
+    titilar 3s ease-in-out infinite;
+
+}
+
+@keyframes titilar{
+
+    0%{
+        opacity:.3;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.3;
+    }
+
+}
+
 .galaxy{
 background:
 position:relative;
@@ -144,6 +167,24 @@ transform:translateY(0px);
 50%{
 transform:translateY(-12px);
 }
+}
+
+.particula{
+    animation: titilar 3s ease-in-out infinite;
+}
+
+@keyframes titilar{
+
+    0%,100%{
+        opacity:.25;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.3);
+    }
+
 }
 
 .nebulosa{
@@ -266,22 +307,21 @@ z-index:100;
 .finalContenido{
     max-width:700px;
     padding:35px;
-    border:2px solid gold;
+    border:2px solid #7df9ff;
     border-radius:25px;
 
     background:rgba(255,215,0,0.08);
-
-    box-shadow:
-    0 0 20px gold,
-    0 0 40px rgba(255,215,0,0.4);
-
+    0 0 15px #7df9ff,
+    0 0 30px #7df9ff,
+    0 0 50px rgba(125,249,255,0.5);
+    
     backdrop-filter:blur(8px);
 }
 
 .finalContenido h2{
-    color:gold;
+    color:#7df9ff;
     margin-bottom:20px;
-    text-shadow:0 0 15px gold;
+    text-shadow:0 0 15px #7df9ff;
 }
 
 .finalContenido p{
@@ -292,8 +332,8 @@ z-index:100;
 
 .finalContenido h3{
     margin-top:25px;
-    color:gold;
-    text-shadow:0 0 10px gold;
+    color:#7df9ff;
+    text-shadow:0 0 10px #7df9ff;
 }
 
 .fotoFlotante{
@@ -318,15 +358,29 @@ transition:.5s;
 
 z-index:20;
 
-pointer-events:none;
+pointer-events:auto;
 
 }
 
 .fotoFlotante:hover{
 
-transform:scale(1.1);
+    transform:scale(1.08);
 
-box-shadow:0 0 40px gold;
+    box-shadow:
+    0 0 15px #7df9ff,
+    0 0 30px #9d4edd,
+    0 0 50px rgba(255,255,255,.5);
+
+}
+
+.fotoFlotante:active{
+
+    transform:scale(1.12);
+
+    box-shadow:
+    0 0 20px white,
+    0 0 35px #7df9ff,
+    0 0 60px #c77dff;
 
 }
 
@@ -363,6 +417,36 @@ border:1px solid gold;
 border-radius:15px;
 padding:20px;
 font-size:1.2rem;
+
+}
+
+.foto{
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+.foto:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,.4),
+    0 0 30px rgba(125,249,255,.4),
+    0 0 50px rgba(157,78,221,.3);
+
+}
+
+.foto:active{
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 15px white,
+    0 0 25px #7df9ff;
+
 }
 
 .nucleo{
@@ -401,6 +485,50 @@ translate(-50%,-50%)
 scale(1.15);
 
 }
+
+}
+
+#volverArriba{
+    position:fixed;
+    bottom:25px;
+    right:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:gold;
+    color:black;
+
+    font-size:24px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px gold,
+    0 0 30px rgba(255,215,0,.5);
+
+    z-index:99999;
+
+    transition:.3s;
+}
+
+#volverArriba:hover{
+    transform:scale(1.1);
+}
+
+.firmaFinal{
+
+    margin-top:25px;
+
+    font-size:1.2rem;
+
+    color:#7df9ff;
+
+    text-shadow:0 0 10px #7df9ff;
 
 }
 
@@ -556,6 +684,168 @@ transform:scale(1.05);
 box-shadow:0 0 35px gold;
 }
 
+.oculto{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+}
+
+.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.contadorAmor{
+    text-align:center;
+    margin:80px auto;
+    padding:25px;
+
+    width:90%;
+    max-width:600px;
+
+    border-radius:20px;
+
+    background:rgba(255,215,0,0.08);
+
+    border:2px solid white;
+   
+    box-shadow:
+    0 0 15px white,
+    0 0 30px rgba(255,255,255,0.4);
+
+    backdrop-filter:blur(5px);
+}
+
+#tiempoJuntos{
+    font-size:1.5rem;
+    color:white;
+    margin-top:15px;
+    font-weight:bold;
+
+text-shadow:
+    0 0 10px white,
+    0 0 20px white,
+    0 0 35px rgba(255,255,255,0.8);
+
+}
+
+#barraProgreso{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+    height:6px;
+
+    z-index:999999;
+    
+    background:
+linear-gradient(
+90deg,
+#2b0036,
+#5a189a,
+#9d4edd,
+#c77dff,
+#ffd60a
+);
+
+background-size:300% 100%;
+
+animation:galaxia 5s linear infinite;
+
+    box-shadow:
+    0 0 10px #9d4edd,
+    0 0 20px #9d4edd,
+    0 0 35px #c77dff;
+
+    border-radius:0 20px 20px 0;
+
+    transition:width .15s linear;
+}
+
+@keyframes galaxia{
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:100% 50%;
+}
+
+}
+
+#mensajeFinalSorpresa{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(.8);
+
+    background:rgba(20,0,35,.95);
+    border:2px solid #c77dff;
+    border-radius:25px;
+
+    padding:30px;
+    width:85%;
+    max-width:500px;
+
+    text-align:center;
+    color:white;
+
+    box-shadow:
+    0 0 20px #9d4edd,
+    0 0 40px #6a00ff;
+
+    z-index:999999;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.5s;
+}
+
+#mensajeFinalSorpresa.activo{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.corazonLluvia{
+    position:fixed;
+    top:-50px;
+
+    font-size:24px;
+    pointer-events:none;
+
+    z-index:999998;
+
+    animation:caerCorazon 4s linear forwards;
+}
+
+@keyframes caerCorazon{
+
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
 @media (max-width:768px){
 
 .galeria,
@@ -575,6 +865,19 @@ box-shadow:0 0 35px gold;
     width:100% !important;
     max-width:100% !important;
     box-sizing:border-box;
+
+    transition:
+transform .4s ease,
+box-shadow .4s ease;
+
+.foto:active{
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 15px white,
+    0 0 25px #7df9ff;
+
 }
 
 .imgGaleria{
@@ -658,10 +961,19 @@ section{
 }
 
 }
+#volverArriba{
+    width:45px;
+    height:45px;
+    font-size:20px;
+    bottom:20px;
+    right:15px;
+}
 
 </style>
 </head>
 <body>
+
+<div id="barraProgreso"></div>
 
 <div class="nebulosa"></div>
 
@@ -713,15 +1025,15 @@ style="top:1400px;left:10%;">
 
 <img src="gatita2.jpg"
 class="fotoFlotante"
-style="top:4500px;right:10%;">
+style="top:4600px;right:10%;">
 
 <img src="gatita12.jpg"
 class="fotoFlotante"
-style="top:4800px;left:10%;">
+style="top:4900px;left:10%;">
 
 <img src="belisima.jpg"
 class="fotoFlotante"
-style="top:5000px;right:10%;">
+style="top:5100px;right:10%;">
 
 <section>
 
@@ -737,23 +1049,13 @@ style="top:5000px;right:10%;">
 
 <p>
 
-Eres la luz de los dias.
+Hola, mi niña. 💜
 
-La risa en mis días grises.
+Si estás leyendo esto, significa que has llegado a este pequeño rincón que hice pensando en ti. Quise reunir aquí algunas de las cosas que te gustan,y muchos detalles que me recuerdan a ti.
 
-La razón por la que todo tiene más sentido.
+No soy experto creando galaxias ni páginas web, pero cada parte de este lugar fue hecha con cariño. Desde las estrellas hasta las flores, todo tiene un pequeño pedazo de lo mucho que significas para mí.
 
-Contigo aprendí que el amor
-también vive en los detalles,
-en las conversaciones sencillas,
-en las sonrisas inesperadas
-y en la forma en que haces
-que todo se sienta mejor.
-
-Gracias por existir Anita.
-
-❤️
-
+Así que ponte cómoda, explora este universo y disfruta del viaje. Después de todo, esta galaxia tiene una sola razón de existir: tú. ✨🌌
 </p>
 
 </div>
@@ -766,7 +1068,7 @@ Gracias por existir Anita.
 
 <div class="galeria">
 
-<div class="foto">
+<div class="foto animar">
 <img src="gatita4.jpg" class="imgGaleria">
 
 <h3>🐱 Tu Gatita</h3>
@@ -779,7 +1081,7 @@ Al igual que las estrellas iluminan el cielo, ella llena de vida y compañía mu
 
 </div>
 
-<div class="foto">
+<div class="foto animar">
 
 <img src="Imagen3.jpg" class="imgGaleria">
 
@@ -795,7 +1097,7 @@ Así como un lirio destaca por su pureza entre muchas flores, tú destacas por s
 
 </div>
 
-<div class="foto">
+<div class="foto animar">
 
 <img src="Imagen2.jpg" class="imgGaleria">
 
@@ -860,7 +1162,7 @@ Gracias por ser tú.
 
 <h2>📸 fotitos </h2>
 
-<div class="galeriaFotos">
+<div class="galeriaFotos animar">
 
 <img src="Imagen5.jpg" class="imgGaleria">
 <img src="HAMImagen5.jpg" class="imgGaleria">
@@ -881,6 +1183,14 @@ Gracias por ser tú.
 
 </section>
 
+<div class="contadorAmor">
+    <h2>💛 Tiempo desde el inicio de la temporada 💛</h2>
+
+    <div id="tiempoJuntos">
+        Cargando...
+    </div>
+</div>
+
 <section>
 
 <button onclick="abrirCartaFinal()">
@@ -893,28 +1203,27 @@ Gracias por ser tú.
 
 <p>
 
-Anita,
+Mi niña:
 
-si algún día dudas de lo mucho
-que significas para mí,
-recuerda todo lo bonito
-que hemos vivido
-y todo lo que aún nos queda por vivir.
+En fin si llegaste hasta aquí, significa que recorriste todaa esta pequeña galaxia. Tal vez no sea perfecta, ni la mas hermosa ni la mas llamativa ,que va mejor me dedico a otra cosa;pero cada detalle fue pensado con una sonrisa y con el deseo de regalarte algo especial.
 
-Eres mi persona favorita.
+En este tiempo hemos compartido momentos que jamás imaginé vivir cosas tan interesantes cuando todo comenzó. Lo que más me gusta es que contigo puedo ser yo mismo, reír, hablar de cualquier cosa y sentirme en casa incluso en los días más normales.
 
-Mi lugar seguro.
+Pero si algo me enseñó esta temporada(osea este tiempo) es que las cosas bonitas no se construyen de un día para otro. Hubo momentos de nervios, de dudas, de aprender ( sigo aprendiendo a manejarme a veces si mi cabeza me carcome pero ahi vamos ), de conocernos mejor y de descubrir poco a poco todo lo que nos hacía especiales el uno para el otro.
 
-Mi mayor inspiración.
+Hubo conversaciones que nunca olvidaré, abrazos que se quedaron en mi memoria, detalles que parecían pequeños pero significaron mucho, y momentos en los que entendí que lo que más me gustaba no era solo estar contigo, sino compartir mi tiempo contigo.
 
-Gracias por existir.
+Si esta historia fuera una temporada de fútbol, diría que es mi favorita porque todo empezó como un partido cualquiera y terminó convirtiéndose en la campaña más importante de mi vida. Pasamos de ser dos personas que compartían cosas en común. a construir recuerdos, confianza y un cariño que fue creciendo con el tiempo hasta levantar el trofeo más bonito de todos: nosotros. 🏆💜
 
-Te quiero hoy,
-mañana
-y siempre.
+Gracias por cada conversación, cada abrazo, cada recuerdo y por permitirme formar parte de tu mundo. Gracias por ser esa persona que me hace sonreír incluso cuando no lo intenta, por cada momento compartido, por soportar mis drmas interminables, por aguantar mis locuras demenciales y por todo lo que hemos vivido hasta ahora.
 
-❤️
+No sé cuántas estrellas tiene esta galaxia, pero sí sé cuál es mi favorita. Y aunque aquí hay flores, luces y constelaciones, la razón por la que todo esto existe siempre serás tú.
 
+🌻 Te quiero mucho, Anita. 💛✨
+</p>
+
+<p class="firmaFinal">
+    — El 10  creativo el mas guapo y unico "Carlitos"💜
 </p>
 
 </div>
@@ -1017,6 +1326,12 @@ Math.cos(angulo)*radio + "px";
 
 p.style.top =
 Math.sin(angulo)*radio + "px";
+
+p.style.animationDelay =
+(Math.random()*3) + "s";
+
+p.style.animationDuration =
+(2 + Math.random()*3) + "s";
 
 }
 
@@ -1207,6 +1522,172 @@ setInterval(()=>{
 
 },5000);
 
+const elementos =
+document.querySelectorAll(
+".animar"
+);
+
+const observador =
+new IntersectionObserver(
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add(
+"visible"
+);
+
+}
+
+});
+
+},
+{
+threshold:0.15
+}
+);
+
+elementos.forEach(el=>{
+
+el.classList.add("oculto");
+
+observador.observe(el);
+
+});
+
+function actualizarTiempo(){
+
+    const inicio =
+    new Date("2026-02-03T00:00:00");
+
+    const ahora = new Date();
+
+    const diferencia =
+    ahora - inicio;
+
+    const dias =
+    Math.floor(diferencia / (1000*60*60*24));
+
+    const horas =
+    Math.floor(
+    (diferencia % (1000*60*60*24))
+    / (1000*60*60)
+    );
+
+    const minutos =
+    Math.floor(
+    (diferencia % (1000*60*60))
+    / (1000*60)
+    );
+
+    document.getElementById(
+    "tiempoJuntos"
+    ).innerHTML =
+    `${dias} días 💛 ${horas} horas 💛 ${minutos} minutos`;
+}
+
+actualizarTiempo();
+
+setInterval(
+actualizarTiempo,
+60000
+);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+const scrollTop =
+document.documentElement.scrollTop;
+
+const altura =
+document.documentElement.scrollHeight
+-
+document.documentElement.clientHeight;
+
+const progreso =
+(scrollTop / altura) * 100;
+
+document.getElementById(
+"barraProgreso"
+).style.width =
+progreso + "%";
+
+});
+
+let finalActivado = false;
+
+window.addEventListener("scroll",()=>{
+
+    const scrollActual =
+    window.scrollY + window.innerHeight;
+
+    const alturaTotal =
+    document.documentElement.scrollHeight;
+
+    if(
+        scrollActual >= alturaTotal - 150
+        &&
+        !finalActivado
+    ){
+
+        finalActivado = true;
+
+        const mensaje =
+        document.getElementById(
+        "mensajeFinalSorpresa"
+        );
+
+        mensaje.classList.add("activo");
+
+        for(let i=0;i<35;i++){
+
+            setTimeout(()=>{
+
+                const corazon =
+                document.createElement("div");
+
+                corazon.className =
+                "corazonLluvia";
+
+                corazon.innerHTML =
+                Math.random() > .5
+                ? "💜"
+                : "💛";
+
+                corazon.style.left =
+                Math.random()*100 + "vw";
+
+                corazon.style.fontSize =
+                (18 + Math.random()*20)
+                + "px";
+
+                document.body.appendChild(
+                corazon
+                );
+
+                setTimeout(()=>{
+                    corazon.remove();
+                },4000);
+
+            },i*100);
+
+        }
+
+        setTimeout(()=>{
+
+            mensaje.classList.remove(
+            "activo"
+            );
+
+        },6000);
+
+    }
+
+});
+
 </script>
 
 <div id="sorpresa"
@@ -1228,8 +1709,7 @@ text-align:center;
 
 <p>
 este es un intento de detalle para ti,espero te guste.
-
-Te amo mucho Anita,mi niña ❤️
+y si no puse mejor me dedico a otra cosa jsjsj
 </p>
 
 <button onclick="
@@ -1240,11 +1720,11 @@ Cerrar
 
 </div>
 
-<section class="finalGalaxia">
+<section class="finalGalaxia animar">
 
     <div class="finalContenido">
 
-        <h2>🌌 Y bueno si has llegado hasta aqui es por que te lo envie jjsjsj💜</h2>
+        <h2>🌌 Y bueno si has llegado hasta aqui significa q finalmente la termine jjsjsj💜</h2>
 
         <p>
             Cada estrella, cada foto y cada detalle de esta página
@@ -1252,20 +1732,34 @@ Cerrar
         </p>
 
         <p>
-            Gracias por cada sonrisa, cada abrazo y cada momento
-            que hemos compartido.
+           Hacer esto fue todo un reto pero la verdad lo vale por que es para alguien especial
+           jsjs me faltaron poner algun guille te salvaste 
         </p>
 
         <p>
-            Espero que este intento de pequeña galaxia te recuerde lo especial
-            que eres para mí.espero en un futuro poder hacer algo mejor
+           Bueno hacer la galaxia me llevo tiempo si si ta en tuco pero espero en un futuro 
+           poder hacerte algo mejor , cuando sea mas pro en esto.
         </p>
 
-        <h3>🌻 Te quiero mucho, Anita💜</h3>
+        <h3>🌻 en fin eso , en conclusion gracias por existir💜</h3>
 
     </div>
 
 </section>
+
+<button id="volverArriba" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+↑
+</button>
+
+<div id="mensajeFinalSorpresa">
+
+    <h2>💜 Llegaste al final de nuestra galaxia 💜</h2>
+
+    <p>
+        Espero que esta galaxia se encuentre de su agrado, la di toda jsjs algo.✨
+    </p>
+
+</div>
 
 </body>
 </html>
