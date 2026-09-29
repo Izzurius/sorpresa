@@ -109,7 +109,7 @@ transparent 50%),
 #000;
 overflow:hidden;
 position:relative;
-height;100vh;
+height:100vh;
 z-index:2;
 }
 
@@ -870,6 +870,8 @@ background-position:100% 50%;
 transform .4s ease,
 box-shadow .4s ease;
 
+}
+
 .foto:active{
 
     transform:scale(1.03);
@@ -895,15 +897,26 @@ section{
 }
 
 }
+.finalGalaxia{
+    min-height:auto !important;
+    height:auto !important;
+    padding:80px 15px !important;
+}
 
-.finalContenido,
-.final,
-#finalContenido{
+.finalContenido{
+    width:95% !important;
+    max-width:95% !important;
 
     height:auto !important;
     max-height:none !important;
     overflow:visible !important;
 
+    padding:25px 18px !important;
+}
+
+.finalContenido p{
+    font-size:1rem !important;
+    line-height:1.9 !important;
 }
 
 @media (max-width:768px){
