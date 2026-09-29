@@ -294,6 +294,48 @@ z-index:100;
 
 }
 
+#btnMusica{
+
+    position:fixed;
+
+    top:20px;
+    right:20px;
+
+    padding:12px 18px;
+
+    border:none;
+    border-radius:20px;
+
+    background:rgba(125,249,255,.15);
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(8px);
+
+    border:1px solid #7df9ff;
+
+    box-shadow:
+    0 0 15px rgba(125,249,255,.4);
+
+    z-index:99999;
+
+    transition:.3s;
+}
+
+#btnMusica:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 20px #7df9ff,
+    0 0 35px rgba(125,249,255,.6);
+
+}
+
 .finalGalaxia{
     min-height:80vh;
     display:flex;
@@ -916,6 +958,20 @@ section{
 .finalContenido p{
     font-size:1rem !important;
     line-height:1.9 !important;
+}
+
+#btnMusica{
+
+    top:15px;
+
+    right:10px;
+
+    font-size:14px;
+
+    padding:10px 14px;
+
+    max-width:220px;
+
 }
 
 @media (max-width:768px){
@@ -1710,6 +1766,32 @@ window.addEventListener("scroll",()=>{
 
 });
 
+function toggleMusica(){
+
+    const musica =
+    document.getElementById("musica");
+
+    const boton =
+    document.getElementById("btnMusica");
+
+    if(musica.paused){
+
+        musica.play();
+
+        boton.innerHTML =
+        "🌻 Yellow está sonando...";
+
+    }else{
+
+        musica.pause();
+
+        boton.innerHTML =
+        "🎵 Escucha la banda sonora de esta galaxia";
+
+    }
+
+}
+
 </script>
 
 <div id="sorpresa"
@@ -1763,7 +1845,7 @@ Cerrar
             Hacer esto fue todo un reto pero la verdad lo vale por que es para alguien especial
            jsjs me faltaron poner algun guille te salvaste, por ahi en proximas actualizaciones .
             Bueno hacer la galaxia me llevo tiempo si si ta en tuco pero espero en un futuro 
-           poder hacerte algo mejor , cuando sea mas pro en esto , por el momento quedo esto.
+           poder hacerte algo mejor , cuando sea mas pro en esto ,este sera el lugar magico .
         </p>
 
         <h3>🌻 en fin eso , en conclusion gracias por existir, te ame , te amo y te amare💜</h3>
@@ -1781,10 +1863,18 @@ Cerrar
     <h2>💜 Llegaste al final de esta galaxia  💜</h2>
 
     <p>
-        no es un final definitivo sino un coming soon , por el momento quedara asi, espero te guste mi niña.✨
+        no es un final definitivo sino un coming soon , por el momento quedara asi aunque espero que este sea solo comienzo de la mejor historia, espero te guste mi niña.✨
     </p>
 
 </div>
+
+<audio id="musica" loop>
+    <source src="yellow.mp3" type="audio/mpeg">
+</audio>
+
+<button id="btnMusica" onclick="toggleMusica()">
+🎵 Escucha la banda sonora de esta galaxia
+</button>
 
 </body>
 </html>
