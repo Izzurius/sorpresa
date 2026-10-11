@@ -1,0 +1,2095 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Para Anita ❤️</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Segoe UI',sans-serif;
+}
+
+body{
+margin:0;
+overflow-x:hidden;
+
+background:
+radial-gradient(circle at 50% 50%, rgba(255,215,0,.15), transparent 35%),
+radial-gradient(circle at 20% 80%, rgba(102,204,255,.12), transparent 40%),
+radial-gradient(circle at 80% 20%, rgba(255,102,204,.10), transparent 40%),
+#000;
+
+color:white;
+}
+
+section{
+min-height:100vh;
+display:flex;
+justify-content:center;
+align-items:center;
+flex-direction:column;
+text-align:center;
+padding:40px;
+position:relative;
+}
+
+h1{
+font-size:4rem;
+color:#FFD700;
+text-shadow:0 0 20px gold;
+}
+
+h2{
+font-size:2rem;
+margin-bottom:20px;
+color:#FFD700;
+}
+
+p{
+max-width:800px;
+line-height:1.8;
+font-size:1.2rem;
+}
+
+.corazonMagico{
+    position:fixed;
+    font-size:30px;
+    pointer-events:none;
+    z-index:9999;
+
+    animation:subirCorazon 1.5s forwards;
+}
+
+@keyframes subirCorazon{
+    0%{
+        opacity:1;
+        transform:translateY(0) scale(1);
+    }
+
+    100%{
+        opacity:0;
+        transform:translateY(-100px) scale(1.8);
+    }
+}
+
+.estrella{
+
+    animation:
+    titilar 3s ease-in-out infinite;
+
+}
+
+@keyframes titilar{
+
+    0%{
+        opacity:.3;
+    }
+
+    50%{
+        opacity:1;
+    }
+
+    100%{
+        opacity:.3;
+    }
+
+}
+
+.galaxy{
+background:
+position:relative;
+radial-gradient(circle at center,
+rgba(255,215,0,.3),
+transparent 50%),
+#000;
+overflow:hidden;
+height:100vh;
+z-index:2;
+}
+
+.girasolCentral{
+
+animation:
+latido 2s infinite;
+
+}
+
+@keyframes latido{
+
+50%{
+transform:scale(1.15);
+}
+
+}
+
+.botonCarta{
+margin-top:20px;
+margin-bottom:50px;
+padding:10px 20px;
+border-radius:12px;
+border:none;
+background:gold;
+color:black;
+font-weight:bold;
+cursor:pointer;
+}
+
+.carta{
+opacity:0;
+max-height:0;
+overflow:hidden;
+transform:translateY(40px);
+
+transition:
+1.5s;
+}
+
+.carta.visible{
+opacity:1;
+max-height:10000px;
+transform:translateY(0);
+}
+
+.glow{
+animation:pulse 3s infinite, flotar 4s ease-in-out infinite;
+}
+
+@keyframes flotar{
+0%,100%{
+transform:translateY(0px);
+}
+50%{
+transform:translateY(-12px);
+}
+}
+
+.particula{
+    animation: titilar 3s ease-in-out infinite;
+}
+
+@keyframes titilar{
+
+    0%,100%{
+        opacity:.25;
+        transform:scale(.8);
+    }
+
+    50%{
+        opacity:1;
+        transform:scale(1.3);
+    }
+
+}
+
+.nebulosa{
+
+position:fixed;
+
+top:0;
+left:0;
+
+width:100%;
+height:100%;
+
+pointer-events:none;
+
+background:
+
+radial-gradient(
+circle at 30% 40%,
+rgba(255,215,0,.18),
+transparent 35%
+),
+
+radial-gradient(
+circle at 70% 60%,
+rgba(255,120,180,.12),
+transparent 40%
+),
+
+radial-gradient(
+circle at 50% 50%,
+rgba(255,255,255,.06),
+transparent 30%
+);
+
+filter:blur(40px);
+
+animation:
+moverNebulosa 18s ease-in-out infinite;
+
+z-index:0;
+
+}
+
+@keyframes moverNebulosa{
+
+0%{
+
+transform:
+scale(1)
+translate(0px,0px);
+
+}
+
+50%{
+
+transform:
+scale(1.15)
+translate(30px,-20px);
+
+}
+
+100%{
+
+transform:
+scale(1)
+translate(0px,0px);
+
+}
+
+}
+
+.card{
+background:rgba(255,255,255,.08);
+padding:30px;
+border-radius:20px;
+backdrop-filter:blur(10px);
+max-width:900px;
+}
+
+.flower{
+font-size:3rem;
+margin:10px;
+animation:spin 12s linear infinite;
+display:inline-block;
+}
+
+@keyframes spin{
+100%{
+transform:rotate(360deg);
+}
+}
+
+#contador{
+font-size:2rem;
+margin-top:20px;
+color:#FFD700;
+}
+
+.galeria{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+width:100%;
+max-width:1000px;
+margin-top:120px;
+position:relative;
+z-index:100;
+
+}
+
+#btnMusica{
+
+    position:fixed;
+
+    top:20px;
+    right:20px;
+
+    padding:12px 18px;
+
+    border:none;
+    border-radius:20px;
+
+    background:rgba(125,249,255,.15);
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    backdrop-filter:blur(8px);
+
+    border:1px solid #7df9ff;
+
+    box-shadow:
+    0 0 15px rgba(125,249,255,.4);
+
+    z-index:99999;
+
+    transition:.3s;
+}
+
+#btnMusica:hover{
+
+    transform:scale(1.05);
+
+    box-shadow:
+    0 0 20px #7df9ff,
+    0 0 35px rgba(125,249,255,.6);
+
+}
+
+.finalGalaxia{
+    min-height:80vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:40px 20px;
+}
+
+.finalContenido{
+    max-width:700px;
+    padding:35px;
+    border:2px solid #7df9ff;
+    border-radius:25px;
+
+    background:rgba(255,215,0,0.08);
+    0 0 15px #7df9ff,
+    0 0 30px #7df9ff,
+    0 0 50px rgba(125,249,255,0.5);
+    
+    backdrop-filter:blur(8px);
+}
+
+.finalContenido h2{
+    color:#7df9ff;
+    margin-bottom:20px;
+    text-shadow:0 0 15px #7df9ff;
+}
+
+.finalContenido p{
+    font-size:1.1rem;
+    line-height:1.8;
+    margin:15px 0;
+}
+
+.finalContenido h3{
+    margin-top:25px;
+    color:#7df9ff;
+    text-shadow:0 0 10px #7df9ff;
+}
+
+.fotoFlotante{
+
+position:absolute;
+
+width:180px;
+
+height:180px;
+
+object-fit:cover;
+
+border-radius:20px;
+
+border:2px solid gold;
+
+box-shadow:0 0 25px gold;
+
+animation:flotarFoto 6s ease-in-out infinite;
+
+transition:.5s;
+
+z-index:20;
+
+pointer-events:auto;
+
+}
+
+.fotoFlotante:hover{
+
+    transform:scale(1.08);
+
+    box-shadow:
+    0 0 15px #7df9ff,
+    0 0 30px #9d4edd,
+    0 0 50px rgba(255,255,255,.5);
+
+}
+
+.fotoFlotante:active{
+
+    transform:scale(1.12);
+
+    box-shadow:
+    0 0 20px white,
+    0 0 35px #7df9ff,
+    0 0 60px #c77dff;
+
+}
+
+@keyframes flotarFoto{
+
+0%,100%{
+transform:translateY(0px);
+}
+
+50%{
+transform:translateY(-20px);
+}
+
+}
+
+.imgGaleria{
+width:100%;
+height:250px;
+object-fit:cover;
+border-radius:15px;
+margin-bottom:15px;
+transition:0.4s;
+cursor:pointer;
+}
+
+.imgGaleria:hover{
+transform:scale(1.05);
+box-shadow:0 0 30px gold;
+}
+
+.foto{
+background:rgba(255,215,0,.1);
+border:1px solid gold;
+border-radius:15px;
+padding:20px;
+font-size:1.2rem;
+
+}
+
+.foto{
+
+    transition:
+    transform .4s ease,
+    box-shadow .4s ease;
+
+}
+
+.foto:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 0 15px rgba(255,255,255,.4),
+    0 0 30px rgba(125,249,255,.4),
+    0 0 50px rgba(157,78,221,.3);
+
+}
+
+.foto:active{
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 15px white,
+    0 0 25px #7df9ff;
+
+}
+
+.nucleo{
+
+position:absolute;
+
+top:50%;
+left:50%;
+
+transform:translate(-50%,-50%);
+
+font-size:120px;
+
+z-index:99;
+
+pointer-events:auto;
+
+cursor:pointer;
+
+filter:
+drop-shadow(0 0 20px gold)
+drop-shadow(0 0 40px gold)
+drop-shadow(0 0 80px gold);
+
+animation:
+latidoNucleo 3s infinite;
+
+}
+
+@keyframes latidoNucleo{
+
+50%{
+
+transform:
+translate(-50%,-50%)
+scale(1.15);
+
+}
+
+}
+
+#volverArriba{
+    position:fixed;
+    bottom:25px;
+    right:20px;
+
+    width:50px;
+    height:50px;
+
+    border:none;
+    border-radius:50%;
+
+    background:gold;
+    color:black;
+
+    font-size:24px;
+    font-weight:bold;
+
+    cursor:pointer;
+
+    box-shadow:
+    0 0 15px gold,
+    0 0 30px rgba(255,215,0,.5);
+
+    z-index:99999;
+
+    transition:.3s;
+}
+
+#volverArriba:hover{
+    transform:scale(1.1);
+}
+
+.firmaFinal{
+
+    margin-top:25px;
+
+    font-size:1.2rem;
+
+    color:#7df9ff;
+
+    text-shadow:0 0 10px #7df9ff;
+
+}
+
+.estrellaFugaz{
+
+    position:fixed;
+
+    width:6px;
+    height:7px;
+
+    background:white;
+
+    border-radius:50%;
+
+    box-shadow:
+    0 0 15px white,
+    0 0 30px white,
+    0 0 50px gold;
+
+    z-index:999;
+
+    animation:fugaz 3s linear forwards;
+
+}
+
+.estrellaFugaz::after{
+
+    content:"";
+
+    position:absolute;
+
+    top:0px;
+    right:0;
+
+    width:180px;
+    height:4px;
+
+    background:linear-gradient(
+        to left,
+        white,
+        rgba(255,255,255,0)
+    );
+
+    transform:rotate(135deg);
+
+    transform-origin:right center;
+
+}
+
+@keyframes fugaz{
+
+    from{
+        transform:translate(0,0);
+        opacity:1;
+    }
+
+    to{
+        transform:translate(-600px,600px);
+        opacity:0;
+    }
+
+}
+
+.anilloEnergia{
+position:absolute;
+top:50%;
+left:50%;
+width:50px;
+height:50px;
+border:2px solid rgba(255,215,0,.8);
+border-radius:50%;
+transform:translate(-50%,-50%);
+animation:expandir 4s infinite;
+pointer-events:none;
+}
+
+.anilloEnergia:nth-child(2){
+animation-delay:1.3s;
+}
+
+.anilloEnergia:nth-child(3){
+animation-delay:2.6s;
+}
+
+@keyframes expandir{
+
+0%{
+width:50px;
+height:50px;
+opacity:1;
+}
+
+100%{
+width:500px;
+height:500px;
+opacity:0;
+}
+
+}
+
+.orbita{
+position:absolute;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+pointer-events:none;
+z-index:1;
+}
+
+.girasolOrbita{
+position:absolute;
+font-size:16px;
+filter:drop-shadow(0 0 10px gold);
+}
+
+.particula{
+position:absolute;
+width:4px;
+height:4px;
+background:gold;
+border-radius:50%;
+box-shadow:0 0 10px gold;
+}
+
+.tituloContainer{
+position:relative;
+z-index:10;
+}
+
+.galeriaFotos{
+display:grid;
+grid-template-columns:
+repeat(auto-fit,minmax(250px,1fr));
+gap:20px;
+width:100%;
+max-width:1200px;
+margin-top:30px;
+}
+
+.imgGaleria{
+width:100%;
+height:280px;
+object-fit:cover;
+border-radius:20px;
+border:2px solid gold;
+cursor:pointer;
+transition:.4s;
+box-shadow:0 0 15px rgba(255,215,0,.4);
+}
+
+.imgGaleria:hover{
+transform:scale(1.05);
+box-shadow:0 0 35px gold;
+}
+
+.oculto{
+
+    opacity:0;
+
+    transform:translateY(60px);
+
+    transition:
+    opacity 1s ease,
+    transform 1s ease;
+
+}
+
+.visible{
+
+    opacity:1;
+
+    transform:translateY(0);
+
+}
+
+.contadorAmor{
+    text-align:center;
+    margin:80px auto;
+    padding:25px;
+
+    width:90%;
+    max-width:600px;
+
+    border-radius:20px;
+
+    background:rgba(255,215,0,0.08);
+
+    border:2px solid white;
+   
+    box-shadow:
+    0 0 15px white,
+    0 0 30px rgba(255,255,255,0.4);
+
+    backdrop-filter:blur(5px);
+}
+
+#tiempoJuntos{
+    font-size:1.5rem;
+    color:white;
+    margin-top:15px;
+    font-weight:bold;
+
+text-shadow:
+    0 0 10px white,
+    0 0 20px white,
+    0 0 35px rgba(255,255,255,0.8);
+
+}
+
+#barraProgreso{
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+    height:6px;
+
+    z-index:999999;
+    
+    background:
+linear-gradient(
+90deg,
+#2b0036,
+#5a189a,
+#9d4edd,
+#c77dff,
+#ffd60a
+);
+
+background-size:300% 100%;
+
+animation:galaxia 5s linear infinite;
+
+    box-shadow:
+    0 0 10px #9d4edd,
+    0 0 20px #9d4edd,
+    0 0 35px #c77dff;
+
+    border-radius:0 20px 20px 0;
+
+    transition:width .15s linear;
+}
+
+@keyframes galaxia{
+
+0%{
+background-position:0% 50%;
+}
+
+100%{
+background-position:100% 50%;
+}
+
+}
+
+#mensajeFinalSorpresa{
+    position:fixed;
+    top:50%;
+    left:50%;
+    transform:translate(-50%,-50%) scale(.8);
+
+    background:rgba(20,0,35,.95);
+    border:2px solid #c77dff;
+    border-radius:25px;
+
+    padding:30px;
+    width:85%;
+    max-width:500px;
+
+    text-align:center;
+    color:white;
+
+    box-shadow:
+    0 0 20px #9d4edd,
+    0 0 40px #6a00ff;
+
+    z-index:999999;
+
+    opacity:0;
+    pointer-events:none;
+
+    transition:.10s;
+}
+
+#mensajeFinalSorpresa.activo{
+    opacity:1;
+    transform:translate(-50%,-50%) scale(1);
+}
+
+.corazonLluvia{
+    position:fixed;
+    top:-50px;
+
+    font-size:24px;
+    pointer-events:none;
+
+    z-index:999998;
+
+    animation:caerCorazon 4s linear forwards;
+}
+
+@keyframes caerCorazon{
+
+    0%{
+        transform:translateY(-50px) rotate(0deg);
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(110vh) rotate(360deg);
+        opacity:0;
+    }
+
+}
+
+@media (max-width:768px){
+
+.galeria,
+.galeriaFotos{
+    display:grid !important;
+    grid-template-columns:1fr !important;
+    width:100% !important;
+    max-width:100% !important;
+    gap:20px;
+    padding:0 12px;
+    margin-left:auto;
+    margin-right:auto;
+    box-sizing:border-box;
+}
+
+.foto{
+    width:100% !important;
+    max-width:100% !important;
+    box-sizing:border-box;
+
+    transition:
+transform .4s ease,
+box-shadow .4s ease;
+
+}
+
+.foto:active{
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 15px white,
+    0 0 25px #7df9ff;
+
+}
+
+.imgGaleria{
+    width:100% !important;
+    max-width:100% !important;
+    height:auto !important;
+    display:block;
+    object-fit:cover;
+}
+
+section{
+    width:100%;
+    max-width:100%;
+    overflow-x:hidden;
+}
+
+}
+.finalGalaxia{
+    min-height:auto !important;
+    height:auto !important;
+    padding:80px 15px !important;
+}
+
+.finalContenido{
+    width:95% !important;
+    max-width:95% !important;
+
+    height:auto !important;
+    max-height:none !important;
+    overflow:visible !important;
+
+    padding:25px 18px !important;
+}
+
+.finalContenido p{
+    font-size:1rem !important;
+    line-height:1.9 !important;
+}
+
+#btnMusica{
+
+    top:15px;
+
+    right:10px;
+
+    font-size:14px;
+
+    padding:10px 14px;
+
+    max-width:220px;
+
+}
+
+@media (max-width:768px){
+
+  .fotoFlotante{
+    position:static !important;
+    display:block !important;
+    width:85% !important;
+    max-width:320px !important;
+    height:auto !important;
+    margin:25px auto !important;
+
+    left:auto !important;
+    right:auto !important;
+    top:auto !important;
+    bottom:auto !important;
+
+    transform:none !important;
+  }
+
+  .carta{
+    width:90% !important;
+    margin:auto !important;
+  }
+
+h1{
+    font-size:48px !important;
+    line-height:1.1 !important;
+}
+
+#contador{
+    margin-top:10px !important;
+    font-size:24px !important;
+}
+
+button{
+    width:85% !important;
+    max-width:300px !important;
+    padding:15px !important;
+    font-size:18px !important;
+}
+
+.carta{
+    padding:25px !important;
+    font-size:17px !important;
+    line-height:1.8 !important;
+}
+
+section{
+    margin-top:50px !important;
+    margin-bottom:50px !important;
+}
+
+.finalContenido{
+    width:90%;
+    padding:25px;
+}
+
+.finalContenido h2{
+    font-size:1.8rem;
+}
+
+.finalContenido p{
+    font-size:1rem;
+}
+
+}
+#volverArriba{
+    width:45px;
+    height:45px;
+    font-size:20px;
+    bottom:20px;
+    right:15px;
+}
+
+
+/* Portal al siguiente rincón de la galaxia */
+.portalFinal {
+    position: relative;
+    isolation: isolate;
+    overflow: hidden;
+    min-height: 340px;
+    padding: 70px 22px 85px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #fff8df;
+    background:
+        radial-gradient(ellipse at 50% 100%, rgba(94, 39, 150, .42), transparent 58%),
+        radial-gradient(ellipse at 20% 20%, rgba(111, 54, 180, .20), transparent 45%),
+        #080617;
+}
+.portalFinal h2 {
+    position: relative;
+    z-index: 2;
+    max-width: 720px;
+    margin-bottom: 14px;
+    font-size: clamp(1.55rem, 4vw, 2.35rem);
+    text-shadow: 0 0 18px rgba(196, 151, 255, .45);
+}
+.portalFinal p {
+    position: relative;
+    z-index: 2;
+    max-width: 570px;
+    line-height: 1.75;
+    margin-bottom: 30px;
+    color: #e8dcff;
+}
+.portalEstrella {
+    position: relative;
+    z-index: 3;
+    width: 190px;
+    height: 155px;
+    display: grid;
+    place-items: center;
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    -webkit-tap-highlight-color: transparent;
+    filter: drop-shadow(0 0 17px rgba(255, 205, 77, .24));
+    transition: transform .35s ease, filter .35s ease;
+}
+.portalEstrella:hover,
+.portalEstrella:focus-visible {
+    transform: scale(1.09);
+    filter: drop-shadow(0 0 28px rgba(255, 211, 94, .8));
+    outline: none;
+}
+.nubePortal {
+    position: absolute;
+    width: 112px;
+    height: 40px;
+    border-radius: 50%;
+    background: radial-gradient(ellipse, rgba(178, 112, 255, .88), rgba(104, 48, 174, .62) 55%, transparent 75%);
+    filter: blur(5px);
+    animation: nubeFlota 4s ease-in-out infinite;
+}
+.nubePortal::before,
+.nubePortal::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+    background: inherit;
+}
+.nubePortal::before { width: 66px; height: 48px; left: 13px; top: -20px; }
+.nubePortal::after { width: 72px; height: 54px; right: 5px; top: -25px; }
+.nubePortal.nubeIzq { left: -7px; top: 79px; animation-delay: -.8s; }
+.nubePortal.nubeDer { right: -8px; top: 54px; transform: scale(.78); animation-delay: -2s; }
+.estrellaDorada {
+    position: relative;
+    z-index: 2;
+    color: #ffe28a;
+    font-size: 88px;
+    line-height: 1;
+    text-shadow:
+        0 0 8px #fff4c2,
+        0 0 22px #ffd45a,
+        0 0 48px rgba(255, 182, 35, .85);
+    animation: estrellaPulso 2.5s ease-in-out infinite;
+}
+.textoTocarEstrella {
+    position: relative;
+    z-index: 2;
+    margin-top: 7px;
+    color: #ffeab1;
+    font-size: .92rem;
+    letter-spacing: .04em;
+}
+@keyframes estrellaPulso {
+    0%, 100% { transform: scale(.96) rotate(-3deg); }
+    50% { transform: scale(1.08) rotate(3deg); }
+}
+@keyframes nubeFlota {
+    0%, 100% { translate: 0 0; }
+    50% { translate: 0 -9px; }
+}
+/* Animación de viaje al tocar la estrella */
+.viajeGalactico {
+    position: fixed;
+    inset: 0;
+    z-index: 999999;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background:
+        radial-gradient(circle at center, rgba(92, 46, 148, .38), transparent 25%),
+        #05030d;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity .65s ease;
+}
+.viajeGalactico.iniciarViaje {
+    opacity: 1;
+    pointer-events: auto;
+}
+.viajeGalactico .estrellaViaje {
+    color: #ffe38a;
+    font-size: 90px;
+    text-shadow: 0 0 15px #fff1b0, 0 0 45px #ffbd36, 0 0 100px #a96cff;
+    animation: viajarAlCentro 2.5s cubic-bezier(.55,0,.8,.25) forwards;
+}
+.viajeGalactico .mensajeViaje {
+    margin-top: 22px;
+    color: #eadcff;
+    font-size: 1rem;
+    letter-spacing: .06em;
+    text-align: center;
+    padding: 0 20px;
+    animation: mensajeDesvanecer 2.5s ease forwards;
+}
+.rastroViaje {
+    position: absolute;
+    width: 2px;
+    height: 35vh;
+    background: linear-gradient(transparent, #d7b4ff, #ffe6a0, transparent);
+    opacity: 0;
+    transform: rotate(var(--angulo)) translateY(-18vh);
+    animation: estela 1.3s ease-in infinite;
+}
+@keyframes viajarAlCentro {
+    0% { transform: scale(1) rotate(0); }
+    65% { transform: scale(2.5) rotate(30deg); }
+    100% { transform: scale(24) rotate(90deg); opacity: .15; }
+}
+@keyframes mensajeDesvanecer {
+    0%, 55% { opacity: 1; }
+    100% { opacity: 0; }
+}
+@keyframes estela {
+    0% { opacity: 0; translate: 0 25vh; }
+    35% { opacity: .8; }
+    100% { opacity: 0; translate: 0 -35vh; }
+}
+@media (prefers-reduced-motion: reduce) {
+    .estrellaDorada, .nubePortal, .viajeGalactico .estrellaViaje, .viajeGalactico .mensajeViaje, .rastroViaje {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+    }
+}
+
+</style>
+</head>
+<body>
+
+<div id="barraProgreso"></div>
+
+<div class="nebulosa"></div>
+
+<section class="galaxy">
+
+<div class="orbita" id="orbita"></div>
+
+<div class="nucleo">
+🌻
+
+<div class="anilloEnergia"></div>
+<div class="anilloEnergia"></div>
+<div class="anilloEnergia"></div>
+
+</div>
+
+<div class="tituloContainer">
+
+<div class="flower">🌻</div>
+
+<h1 class="glow">Para Mi Niña</h1>
+
+<h2>Ana ❤️</h2>
+
+<p>
+En este día especial quiero recordarte
+lo especial que eres para mí.
+</p>
+
+<div id="contador"></div>
+
+<div class="flower">🌻</div>
+
+</div>
+
+</section>
+
+<img src="gatita6.jpg"
+class="fotoFlotante"
+style="top:900px;left:10%;">
+
+<img src="gatita11.jpg"
+class="fotoFlotante"
+style="top:1200px;right:10%;">
+
+<img src="gatita7.jpg"
+class="fotoFlotante"
+style="top:1400px;left:10%;">
+
+<img src="gatita2.jpg"
+class="fotoFlotante"
+style="top:4600px;right:10%;">
+
+<img src="gatita12.jpg"
+class="fotoFlotante"
+style="top:4900px;left:10%;">
+
+<img src="belisima.jpg"
+class="fotoFlotante"
+style="top:5100px;right:10%;">
+
+<section>
+
+<section>
+
+<button onclick="mostrarCarta('carta')">
+💌 Abrir Carta
+</button>
+
+<div id="carta" class="carta">
+
+<h2>💌 Carta Para Anita</h2>
+
+<p>
+
+Hola, mi niña. 💜
+
+Si estás leyendo esto, significa que has llegado a este pequeño rincón que hice pensando en ti. Quise reunir aquí algunas de las cosas que te gustan,y muchos detalles que me recuerdan a ti.
+
+No soy experto creando galaxias ni páginas web, pero cada parte de este lugar fue hecha con cariño. Desde las estrellas hasta las flores, todo tiene un pequeño pedazo de lo mucho que significas para mí.
+
+Así que ponte cómoda, explora este universo y disfruta del viaje. Después de todo, esta galaxia tiene una sola razón de existir: tú. ✨🌌
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<h2>Flores y cosas que te gustan</h2>
+
+<div class="galeria">
+
+<div class="foto animar">
+<img src="gatita4.jpg" class="imgGaleria">
+
+<h3>🐱 Tu Gatita</h3>
+
+<p>
+Entre todas las cosas que te hacen feliz, tu gatita ocupa un lugar muy especial. No es solo una mascota, sino una compañera que ha estado presente en muchos de tus días,y recuerdo lo importante que es para ti y cómo refleja una parte muy bonita de tu forma de ser: tu paciencia, tu ternura y el cariño que das a quienes forman parte de tu vida. 
+Por eso quise darle un espacio en esta galaxia, porque sé que también es parte de tu mundo.
+Al igual que las estrellas iluminan el cielo, ella llena de vida y compañía muchos de tus momentos. Y aunque esta página está dedicada a ti, también quería incluir a esa pequeña compañera que tantas sonrisas te ha regalado y que ocupa un lugar especial en tu corazón. 🐾💛✨
+</p>
+
+</div>
+
+<div class="foto animar">
+
+<img src="Imagen3.jpg" class="imgGaleria">
+
+<h3>🤍 Lirios Blancos</h3>
+
+<p>
+Los lirios blancos representan la elegancia, la tranquilidad y la belleza que transmites sin esfuerzo.
+
+Me recuerdan a tu forma de ser: serena, auténtica y capaz de iluminar cualquier lugar con tu presencia.
+
+Así como un lirio destaca por su pureza entre muchas flores, tú destacas por ser única entre todas las personas que he conocido.
+</p>
+
+</div>
+
+<div class="foto animar">
+
+<img src="Imagen2.jpg" class="imgGaleria">
+
+<h3>🏎️ Lewis Hamilton</h3>
+
+<p>
+Lewis Hamilton siempre me ha inspirado por su determinación, disciplina y capacidad de seguir adelante incluso en los momentos difíciles.
+
+De la misma manera, quiero seguir construyendo recuerdos contigo, aprendiendo cada día y disfrutando cada etapa de este camino juntos.
+
+Porque las mejores historias no se escriben en una sola vuelta, sino en cada momento compartido.
+</p>
+
+</div>
+
+</section>
+
+<section>
+
+<button onclick="mostrarCarta('poema')">
+💌 Abrir poema
+</button>
+
+<div id="poema" class="carta">
+
+<h2>📖 Poema Para Mi Niña</h2>
+
+<p>
+No sé cuántas estrellas
+caben en el cielo.
+
+Ni cuántos girasoles
+pueden seguir al sol.
+
+Pero sí sé que desde que llegaste,
+mis días tienen más color
+y mis sueños más dirección.
+
+Si las flores amarillas
+representan alegría,
+
+entonces tú eres
+un jardín entero.
+
+Si Hamilton representa velocidad,
+
+tú eres la razón
+por la que vale la pena
+cada vuelta del viaje.
+
+Gracias por cada momento.
+
+Gracias por ser tú.
+
+🌻❤️
+
+</p>
+
+</div>
+
+<div style="height:120px;"></div>
+
+<h2>📸 fotitos </h2>
+
+<div class="galeriaFotos animar">
+
+<img src="Imagen5.jpg" class="imgGaleria">
+<img src="HAMImagen5.jpg" class="imgGaleria">
+<img src="kaiser2.jpg" class="imgGaleria">
+
+<img src="gatita.jpg" class="imgGaleria">
+<img src="itadori.jpg" class="imgGaleria">
+<img src="annn12.jpg" class="imgGaleria">
+
+<img src="Imagen1.jpg" class="imgGaleria">
+<img src="anitaa.jpg" class="imgGaleria">
+<img src="itadorii.jpg" class="imgGaleria">
+
+<img src="kaiser1.jpg" class="imgGaleria">
+<img src="Imagen4.jpg" class="imgGaleria">
+
+</div>
+
+</section>
+
+<div class="contadorAmor">
+    <h2>💛 Tiempo desde el inicio de la temporada 💛</h2>
+
+    <div id="tiempoJuntos">
+        Cargando...
+    </div>
+</div>
+
+<section>
+
+<button onclick="abrirCartaFinal()">
+💌 Abrir Carta Final
+</button>
+
+<div id="cartaFinal" class="carta">
+
+<h2>💌 Carta Final </h2>
+
+<p>
+
+Mi niña:
+
+En fin si llegaste hasta aquí, significa que recorriste todaa esta pequeña galaxia. Tal vez no sea perfecta, ni la mas hermosa ni la mas llamativa ,que va mejor me dedico a otra cosa;pero cada detalle fue pensado con una sonrisa y con el deseo de regalarte algo especial.
+
+En este tiempo hemos compartido momentos que jamás imaginé vivir cosas tan interesantes cuando todo comenzó. Lo que más me gusta es que contigo puedo ser yo mismo, reír, hablar de cualquier cosa y sentirme en casa incluso en los días más normales.
+
+Pero si algo me enseñó esta temporada(osea este tiempo) es que las cosas bonitas no se construyen de un día para otro. Hubo momentos de nervios, de dudas, de aprender ( sigo aprendiendo a manejarme a veces si mi cabeza me carcome pero ahi vamos ), de conocernos mejor y de descubrir poco a poco todo lo que nos hacía especiales el uno para el otro.
+
+Hubo conversaciones que nunca olvidaré, abrazos que se quedaron en mi memoria, detalles que parecían pequeños pero significaron mucho, y momentos en los que entendí que lo que más me gustaba no era solo estar contigo, sino compartir mi tiempo contigo.
+
+Si esta historia fuera una temporada de fútbol, diría que es mi favorita porque todo empezó como un partido cualquiera y terminó convirtiéndose en la campaña más importante de mi vida. Pasamos de ser dos personas que compartían cosas en común. a construir recuerdos, confianza y un cariño que fue creciendo con el tiempo hasta levantar el trofeo más bonito de todos: nosotros. 🏆💜
+
+Gracias por cada conversación, cada abrazo, cada recuerdo y por permitirme formar parte de tu mundo. Gracias por ser esa persona que me hace sonreír incluso cuando no lo intenta, por cada momento compartido, por soportar mis drmas interminables, por aguantar mis locuras demenciales y por todo lo que hemos vivido hasta ahora.
+
+No sé cuántas estrellas tiene esta galaxia, pero sí sé cuál es mi favorita. Y aunque aquí hay flores, luces y constelaciones, la razón por la que todo esto existe siempre serás tú.
+
+🌻 Te quiero mucho, Anita. 💛✨
+</p>
+
+<p class="firmaFinal">
+    — El 10  creativo el mas guapo y unico "Carlitos"💜
+</p>
+
+</div>
+
+</section>
+
+<script>
+
+const inicio = new Date("2026-08-10");
+
+function actualizar(){
+
+const hoy = new Date();
+
+const diferencia =
+hoy - inicio;
+
+const dias =
+Math.floor(
+diferencia /
+(1000*60*60*24)
+);
+
+document.getElementById("contador")
+.innerHTML =
+"🌻 " + dias + " días juntos 🌻";
+
+}
+
+actualizar();
+
+const orbita = document.getElementById("orbita");
+
+const centroX = window.innerWidth / 2;
+const centroY = window.innerHeigth / 2;
+
+
+for(let i=0;i<140;i++){
+
+let flor = document.createElement("div");
+
+flor.className = "girasolOrbita";
+flor.innerHTML = "🌻";
+
+orbita.appendChild(flor);
+
+let brazos = 4;
+
+let brazo =
+(i % brazos) *
+((Math.PI*2)/brazos);
+
+let radio =
+20 + Math.random()*420;
+
+let angulo =
+brazo +
+radio*0.06 +
+(Math.random()-0.5)*0.4;
+
+let velocidad = 0.001 + Math.random()*0.002;
+
+function animar(){
+
+angulo += velocidad;
+
+let espiral = radio * 0.04;
+
+let x = centroX + Math.cos(angulo) *
+radio *
+(1 + espiral);
+
+let y = centroY + Math.sin(angulo) *
+radio *
+0.6 *
+(1 + espiral);
+
+flor.style.left = x + "px";
+flor.style.top = y + "px";
+
+requestAnimationFrame(animar);
+}
+
+animar();
+}
+
+for(let i=0;i<500;i++){
+
+let p = document.createElement("div");
+
+p.className = "particula";
+
+orbita.appendChild(p);
+
+let angulo = Math.random()*Math.PI*2;
+let radio = 50 + Math.random()*400;
+
+p.style.left =
+Math.cos(angulo)*radio + "px";
+
+p.style.top =
+Math.sin(angulo)*radio + "px";
+
+p.style.animationDelay =
+(Math.random()*3) + "s";
+
+p.style.animationDuration =
+(2 + Math.random()*3) + "s";
+
+}
+
+setInterval(()=>{
+
+let estrella=document.createElement("div");
+
+estrella.innerHTML="✨";
+
+estrella.style.position="fixed";
+estrella.style.left=Math.random()*window.innerWidth+"px";
+estrella.style.top=Math.random()*window.innerHeight+"px";
+
+estrella.style.pointerEvents="none";
+
+estrella.style.zIndex="9999";
+
+document.body.appendChild(estrella);
+
+setTimeout(()=>{
+estrella.remove();
+},2000);
+
+},300);
+
+document.addEventListener("click",(e)=>{
+
+let h=document.createElement("div");
+
+h.innerHTML="💛";
+
+h.style.position="fixed";
+h.style.left=e.clientX+"px";
+h.style.top=e.clientY+"px";
+
+h.style.fontSize="24px";
+
+h.style.zIndex="9999";
+
+document.body.appendChild(h);
+
+setTimeout(()=>{
+h.remove();
+},1500);
+
+});
+
+function mostrarCarta(id){
+
+const carta =
+document.getElementById(id);
+
+if(carta){
+
+carta.classList.add("visible");
+
+}
+
+}
+
+function abrirPoema(){
+
+document
+.getElementById("cartaPoema")
+.classList
+.add("visible");
+
+}
+
+function abrirCartaFinal(){
+
+document
+.getElementById("cartaFinal")
+.classList
+.add("visible");
+
+}
+
+let clicksSecretos = 0;
+
+document
+.querySelector(".nucleo")
+.addEventListener("click",()=>{
+
+clicksSecretos++;
+
+if(clicksSecretos >= 7){
+
+document
+.getElementById("sorpresa")
+.style.display="block";
+
+}
+
+});
+
+setInterval(()=>{
+
+let chispa=document.createElement("div");
+
+chispa.innerHTML="✨";
+
+chispa.style.position="absolute";
+
+chispa.style.left=
+(window.innerWidth/2+
+(Math.random()*200-100))+"px";
+
+chispa.style.top=
+(window.innerHeight/2+
+(Math.random()*200-100))+"px";
+
+chispa.style.fontSize=
+(10+Math.random()*20)+"px";
+
+chispa.style.pointerEvents="none";
+
+chispa.style.zIndex="999";
+
+document.body.appendChild(chispa);
+
+let vida=0;
+
+let animar=setInterval(()=>{
+
+vida++;
+
+chispa.style.opacity=1-vida/40;
+
+chispa.style.transform=
+`translateY(${-vida*2}px)`;
+
+if(vida>=40){
+
+clearInterval(animar);
+
+chispa.remove();
+
+}
+
+},30);
+
+},200);
+
+document.querySelectorAll("img").forEach(img => {
+
+    img.addEventListener("click", function(e){
+
+        let corazon = document.createElement("div");
+
+        corazon.className = "corazonMagico";
+        corazon.innerHTML = "💛";
+
+        corazon.style.left = e.clientX + "px";
+        corazon.style.top = e.clientY + "px";
+
+        document.body.appendChild(corazon);
+
+        setTimeout(() => {
+            corazon.remove();
+        },1500);
+
+    });
+
+});
+
+setInterval(()=>{
+
+    let estrella =
+    document.createElement("div");
+
+    estrella.className =
+    "estrellaFugaz";
+
+    estrella.style.top =
+    Math.random()*window.innerHeight+"px";
+
+    estrella.style.left =
+    window.innerWidth+"px";
+
+    document.body.appendChild(estrella);
+
+    setTimeout(()=>{
+
+        estrella.remove();
+
+    },2000);
+
+},5000);
+
+const elementos =
+document.querySelectorAll(
+".animar"
+);
+
+const observador =
+new IntersectionObserver(
+(entries)=>{
+
+entries.forEach(entry=>{
+
+if(entry.isIntersecting){
+
+entry.target.classList.add(
+"visible"
+);
+
+}
+
+});
+
+},
+{
+threshold:0.15
+}
+);
+
+elementos.forEach(el=>{
+
+el.classList.add("oculto");
+
+observador.observe(el);
+
+});
+
+function actualizarTiempo(){
+
+    const inicio =
+    new Date("2026-02-03T00:00:00");
+
+    const ahora = new Date();
+
+    const diferencia =
+    ahora - inicio;
+
+    const dias =
+    Math.floor(diferencia / (1000*60*60*24));
+
+    const horas =
+    Math.floor(
+    (diferencia % (1000*60*60*24))
+    / (1000*60*60)
+    );
+
+    const minutos =
+    Math.floor(
+    (diferencia % (1000*60*60))
+    / (1000*60)
+    );
+
+    document.getElementById(
+    "tiempoJuntos"
+    ).innerHTML =
+    `${dias} días 💛 ${horas} horas 💛 ${minutos} minutos`;
+}
+
+actualizarTiempo();
+
+setInterval(
+actualizarTiempo,
+60000
+);
+
+window.addEventListener(
+"scroll",
+()=>{
+
+const scrollTop =
+document.documentElement.scrollTop;
+
+const altura =
+document.documentElement.scrollHeight
+-
+document.documentElement.clientHeight;
+
+const progreso =
+(scrollTop / altura) * 100;
+
+document.getElementById(
+"barraProgreso"
+).style.width =
+progreso + "%";
+
+});
+
+let finalActivado = false;
+
+window.addEventListener("scroll",()=>{
+
+    const scrollActual =
+    window.scrollY + window.innerHeight;
+
+    const alturaTotal =
+    document.documentElement.scrollHeight;
+
+    if(
+        scrollActual >= alturaTotal - 150
+        &&
+        !finalActivado
+    ){
+
+        finalActivado = true;
+
+        const mensaje =
+        document.getElementById(
+        "mensajeFinalSorpresa"
+        );
+
+        mensaje.classList.add("activo");
+
+        for(let i=0;i<35;i++){
+
+            setTimeout(()=>{
+
+                const corazon =
+                document.createElement("div");
+
+                corazon.className =
+                "corazonLluvia";
+
+                corazon.innerHTML =
+                Math.random() > .5
+                ? "💜"
+                : "💛";
+
+                corazon.style.left =
+                Math.random()*100 + "vw";
+
+                corazon.style.fontSize =
+                (18 + Math.random()*20)
+                + "px";
+
+                document.body.appendChild(
+                corazon
+                );
+
+                setTimeout(()=>{
+                    corazon.remove();
+                },4000);
+
+            },i*100);
+
+        }
+
+        setTimeout(()=>{
+
+            mensaje.classList.remove(
+            "activo"
+            );
+
+        },6000);
+
+    }
+
+});
+
+function toggleMusica(){
+
+    const musica =
+    document.getElementById("musica");
+
+    const boton =
+    document.getElementById("btnMusica");
+
+    if(musica.paused){
+
+        musica.play();
+
+        boton.innerHTML =
+        "🌻 Yellow está sonando...";
+
+    }else{
+
+        musica.pause();
+
+        boton.innerHTML =
+        "🎵 Escucha la banda sonora de esta galaxia";
+
+    }
+
+}
+
+
+function iniciarViajeEstrella() {
+    const viaje = document.getElementById("viajeGalactico");
+    if (!viaje) return;
+
+    viaje.classList.add("iniciarViaje");
+    viaje.setAttribute("aria-hidden", "false");
+
+    // Pequeñas estelas luminosas para dar sensación de atravesar el espacio.
+    for (let i = 0; i < 24; i++) {
+        const estela = document.createElement("span");
+        estela.className = "rastroViaje";
+        estela.style.left = (Math.random() * 100) + "vw";
+        estela.style.setProperty("--angulo", (Math.random() * 50 - 25) + "deg");
+        estela.style.animationDelay = (Math.random() * 0.65) + "s";
+        viaje.appendChild(estela);
+    }
+
+    // La página de destino debe estar en la misma carpeta que index.html.
+    window.setTimeout(() => {
+        window.location.href = "estrella.html";
+    }, 2350);
+}
+
+</script>
+
+<div id="sorpresa"
+style="
+display:none;
+position:fixed;
+top:50%;
+left:50%;
+transform:translate(-50%,-50%);
+background:black;
+border:2px solid gold;
+padding:30px;
+border-radius:20px;
+z-index:99999;
+text-align:center;
+">
+
+<h2>💛 Sorpresa Desbloqueada 💛</h2>
+
+<p>
+este es un intento de detalle para ti,espero te guste.
+y si no puse mejor me dedico a otra cosa jsjsj
+</p>
+
+<button onclick="
+document.getElementById('sorpresa').style.display='none'
+">
+Cerrar
+</button>
+
+</div>
+
+<section class="finalGalaxia animar">
+
+    <div class="finalContenido">
+
+        <h2>🌌 Y bueno llegar hasta aqui significa q finalmente la termine jjsjsj💜</h2>
+
+        <p>
+           notas, Cada estrella, cada foto y cada detalle de esta página
+            fue colocado pensando en ti.
+        </p>
+
+        <p>
+          La idea de hacer una galaxia se origino principalmente por que queria hacer algo nuevo 
+          algo que no quedara ahi sino que fuera expandiendose con el tiempo, por eso fue una galaxia
+          por que ella represante lo fue, lo que es y lo que sera . 
+        </p>
+
+        <p>
+            Hacer esto fue todo un reto pero la verdad lo vale por que es para alguien especial
+           jsjs me faltaron poner algun guille te salvaste, por ahi en proximas actualizaciones .
+            Bueno hacer la galaxia me llevo tiempo si si ta en tuco pero espero en un futuro 
+           poder hacerte algo mejor , cuando sea mas pro en esto ,este sera el lugar magico .
+        </p>
+
+        <h3>🌻 en fin eso , en conclusion gracias por existir, te ame , te amo y te amare💜</h3>
+
+    </div>
+
+</section>
+
+
+<section class="portalFinal animar" id="siguienteMundo">
+    <h2>✨ ¿Quieres seguir ampliando este mundo? ✨</h2>
+    <p>
+        Esta galaxia todavía guarda espacio para nuevas historias, recuerdos y sueños.
+        Si quieres descubrir el siguiente rincón, toca la estrella dorada. 💜
+    </p>
+
+    <button class="portalEstrella" type="button" onclick="iniciarViajeEstrella()"
+        aria-label="Viajar a nuestra estrella compartida">
+        <span class="nubePortal nubeIzq" aria-hidden="true"></span>
+        <span class="nubePortal nubeDer" aria-hidden="true"></span>
+        <span class="estrellaDorada" aria-hidden="true">★</span>
+    </button>
+    <span class="textoTocarEstrella">Toca la estrella para viajar ✦</span>
+</section>
+
+<div class="viajeGalactico" id="viajeGalactico" aria-hidden="true">
+    <span class="estrellaViaje" aria-hidden="true">★</span>
+    <p class="mensajeViaje">Viajando hacia nuestro próximo rincón… 💜</p>
+</div>
+
+<button id="volverArriba" onclick="window.scrollTo({top:0, behavior:'smooth'})">
+↑
+</button>
+
+<div id="mensajeFinalSorpresa">
+
+    <h2>💜 Llegaste al final de esta galaxia  💜</h2>
+
+    <p>
+        no es un final definitivo sino un coming soon , por el momento quedara asi aunque espero que este sea solo comienzo de la mejor historia, espero te guste mi niña.✨
+    </p>
+
+</div>
+
+<audio id="musica" loop>
+    <source src="yellow.mp3" type="audio/mpeg">
+</audio>
+
+<button id="btnMusica" onclick="toggleMusica()">
+🎵 Escucha la banda sonora de esta galaxia
+</button>
+
+</body>
+</html>
